@@ -208,10 +208,13 @@ def q18
 end
 
 class Item
-  # 以下を修正して下さい
-
-  def initialize(name)
+  # 以下を修正して下さい  
+  def initialize(name:)
     @name = name
+  end
+
+  def name
+    puts @name
   end
 end
 
@@ -223,11 +226,32 @@ end
 
 class UserQ20
   # 以下に回答を記載
+  def initialize(name:, age:, entry_free:)
+    @name = name
+    @age = age
+    @entry_free = entry_free
+  end
 
 end
-
 class Zoo
   # 以下に回答を記載
+  def  info_entry_fee
+
+    case
+
+    when 0..5
+      entry_fee[:infant]
+    when 6..12
+      entry_fee[:children]
+    when 13..64
+      entry_fee[:adult]
+    else
+      entry_fee[:senior]
+    end
+
+    puts "#{user.name}さんの入場料金は#{@entry_fee}円です。"
+
+  end
 
 end
 
