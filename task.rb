@@ -222,10 +222,9 @@ end
 
 class UserQ20
   # 以下に回答を記載
-  def initialize(name:, age:, entry_free:)
+  def initialize(name:, age:)
     @name = name
     @age = age
-    @entry_free = entry_free
   end
 
 end
@@ -237,7 +236,8 @@ class Zoo
   end
 
   def  info_entry_fee
-    case
+  fee = user.entry_fee
+    case fee
 
     when 0..5
       @entry_fee[:infant]
@@ -248,11 +248,8 @@ class Zoo
     when 65..120
       @entry_fee[:senior]
     end
-
-    puts "#{@name}さんの入場料金は#{@entry_fee}円です。"
-
+    puts "#{@name}さんの入場料金は#{fee}円です。"
   end
-
 end
 
 
